@@ -44,15 +44,24 @@ var pomodoro = {
         if(this.onPause == true) {
             this.resetVariables(this.minutes, this.seconds, true);
             this.onPause = false;
+            document.getElementById("timer").style.borderColor = "#ffffff";
+        document.getElementById("timer").style.color = "#ffffff";
         } else {
             this.resetVariables(50, 0, true);
+            document.getElementById("msg").innerHTML = "Sessione in corso";
         }
     },
     pauseWork: function() {
         this.onPause = true;
+        document.getElementById("timer").style.borderColor = "#868686";
+        document.getElementById("timer").style.color = "#868686";
+        document.getElementById("msg").innerHTML = "Sessione in pausa";
         this.resetVariables(this.minutes, this.seconds, false);
       },
     startBreak : function(){
+        document.getElementById("timer").style.borderColor = "#006100";
+        document.getElementById("timer").style.color = "#006100";
+        document.getElementById("break").style.display = "none";
         document.getElementById("pause").style.display = "none";
         document.getElementById("work").style.display = "none";
         this.resetVariables(0, 5, true);
@@ -60,6 +69,10 @@ var pomodoro = {
     stopTimer : function(){
         document.getElementById("pause").style.display = "none";
         document.getElementById("work").style.display = "inline";   
+        document.getElementById("break").style.display = "inline";   
+        document.getElementById("timer").style.borderColor = "#ffffff";
+        document.getElementById("timer").style.color = "#ffffff";
+        document.getElementById("msg").innerHTML = "Buono studio!";
         this.resetVariables(50, 0, false);
         this.onPause = false;
         this.updateDom();
@@ -93,7 +106,16 @@ var pomodoro = {
       this.updateDom();
     },
     timerComplete : function(){
+        if(this.onPause == true) {
+          document.getElementById("msg").innerHTML = "Pausa terminata!";
+          this.onPause = false;
+        } else {
+          document.getElementById("msg").innerHTML = "Sessione terminata!";
+        }
+
         this.started = false;
+        document.getElementById("timer").style.borderColor = "#8b0000";
+        document.getElementById("timer").style.color = "#8b0000";
         document.getElementById("pause").style.display = "none";
         document.getElementById("work").style.display = "inline";   
     }
