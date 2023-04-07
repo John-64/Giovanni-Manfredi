@@ -59,12 +59,12 @@ var pomodoro = {
         this.resetVariables(this.minutes, this.seconds, false);
       },
     startBreak : function(){
-        document.getElementById("timer").style.borderColor = "#006100";
-        document.getElementById("timer").style.color = "#006100";
-        document.getElementById("break").style.display = "none";
-        document.getElementById("pause").style.display = "none";
-        document.getElementById("work").style.display = "none";
-        this.resetVariables(0, 5, true);
+      document.getElementById("msg").innerHTML = "Rilassati, sei in pausa! 😁";
+      document.getElementById("break").style.display = "none";
+      document.getElementById("pause").style.display = "none";
+      document.getElementById("work").style.display = "none";
+      this.onPause = true;
+      this.resetVariables(0, 5, true);
     },
     stopTimer : function(){
         document.getElementById("pause").style.display = "none";
@@ -112,10 +112,9 @@ var pomodoro = {
         } else {
           document.getElementById("msg").innerHTML = "Sessione terminata!";
         }
-
+        var audio = new Audio('alert.mp3');
+        audio.play();
         this.started = false;
-        document.getElementById("timer").style.borderColor = "#8b0000";
-        document.getElementById("timer").style.color = "#8b0000";
         document.getElementById("pause").style.display = "none";
         document.getElementById("work").style.display = "inline";   
     }
