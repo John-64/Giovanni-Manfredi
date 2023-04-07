@@ -64,7 +64,7 @@ var pomodoro = {
       document.getElementById("pause").style.display = "none";
       document.getElementById("work").style.display = "none";
       this.onPause = true;
-      this.resetVariables(0, 10, true);
+      this.resetVariables(10, 0, true);
     },
     stopTimer : function(){
         document.getElementById("pause").style.display = "none";
