@@ -1,5 +1,5 @@
 # Tomato-Timer
-Useful Timer for my personal Notion Tomato page.
+Useful Timer (Without ADS) for Notion or any other use.
 
 ## Instructions
-Just copy the link and embed it on Notion!
+Just copy the [link](https://john-64.github.io/Tomato-Timer) and embed it on Notion!
