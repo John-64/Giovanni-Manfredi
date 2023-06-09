@@ -1,38 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="tomato.ico" />
-    <title>Tomato Timer</title>
+    <title>Il mio sito personale</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 </head>
 <body>
-    <h1>Tomato Timer</h1>
-    <div id="container">
-        <div id="timer">
-            <div id="time">
-                <span id="minutes">50</span>
-                <span id="colon">:</span>
-                <span id="seconds">00</span>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">Chi sono</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contattami</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="section">
+        <div class="container">
+            <h1>Benvenuto sul mio sito personale!</h1>
+            <p>Ciao, sono <span id="name">Nome</span>, <span id="occupation">Occupazione</span>.</p>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2>Chi sono</h2>
+            <p>Qui puoi descrivere te stesso e le tue abilità.</p>
+        </div>
+    </section>
+
+    <section id="portfolio" class="section">
+        <div class="container">
+            <h2>Portfolio</h2>
+            <div class="project">
+                <img src="project1.jpg" alt="Progetto 1">
+                <h3>Progetto 1</h3>
+                <p>Descrizione del progetto 1.</p>
+                <a href="progetto1.html">Dettagli</a>
+            </div>
+            <div class="project">
+                <img src="project2.jpg" alt="Progetto 2">
+                <h3>Progetto 2</h3>
+                <p>Descrizione del progetto 2.</p>
+                <a href="progetto2.html">Dettagli</a>
+            </div>
+            <div class="project">
+                <img src="project3.jpg" alt="Progetto 3">
+                <h3>Progetto 3</h3>
+                <p>Descrizione del progetto 3.</p>
+                <a href="progetto3.html">Dettagli</a>
             </div>
         </div>
-        
-        <div id="msg">Buono studio!</div>
+    </section>
 
-        <div id="buttons">
-            <button id="work">Work</button>
-            <button id="pause">Pause</button>
-            <button id="break">Break</button>
-            <button id="stop">Stop</button>
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>Contattami</h2>
+            <form id="contact-form">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Messaggio:</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <input type="submit" value="Invia">
+            </form>
         </div>
-    </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Il mio sito personale. Tutti i diritti riservati.</p>
+        </div>
+    </footer>
 </body>
 </html>
-
-<!-- Aggiungere vincoli come ad esempio:
-    - Pausa dopo stop o sessione
-    - Rimozione pulsante break durante una sessione
--->
