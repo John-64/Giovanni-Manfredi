@@ -1,124 +1,31 @@
-var pomodoro = {
-    started : false,
-    onPause : false,
-    minutes : 0,
-    seconds : 0,
-    interval : null,
-    minutesDom : null,
-    secondsDom : null,
+document.addEventListener("DOMContentLoaded", function() {
+  // Aggiungi un'azione al click del pulsante di invio del modulo di contatto
+  var contactForm = document.getElementById("contact-form");
+  contactForm.addEventListener("submit", function(event) {
+    event.preventDefault(); // Evita il comportamento predefinito dell'invio del modulo
 
-    init : function(){
-      var self = this;
-      this.minutesDom = document.querySelector('#minutes');
-      this.secondsDom = document.querySelector('#seconds');
-      this.interval = setInterval(function(){
-        self.intervalCallback.apply(self);
-      }, 1000);
+    // Ottieni i valori dei campi del modulo di contatto
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var message = document.getElementById("message").value;
 
-      document.querySelector('#work').onclick = function(){
-        self.startWork.apply(self);
-        document.getElementById("work").style.display = "none";
-        document.getElementById("pause").style.display = "inline";
-      };
-
-      document.querySelector('#pause').onclick = function(){
-        self.pauseWork.apply(self);
-        document.getElementById("pause").style.display = "none";
-        document.getElementById("work").style.display = "inline";
-      };
-
-      document.querySelector('#break').onclick = function(){
-        self.startBreak.apply(self);
-      };
-
-      document.querySelector('#stop').onclick = function(){
-        self.stopTimer.apply(self);
-      };
-    },
-    resetVariables : function(mins, secs, started){
-      this.minutes = mins;
-      this.seconds = secs;
-      this.started = started;
-    },
-    startWork: function() {
-        if(this.onPause == true) {
-            this.resetVariables(this.minutes, this.seconds, true);
-            this.onPause = false;
-            document.getElementById("timer").style.borderColor = "#ffffff";
-        document.getElementById("timer").style.color = "#ffffff";
-        } else {
-            this.resetVariables(50, 0, true);
-            document.getElementById("msg").innerHTML = "Sessione in corso";
-        }
-    },
-    pauseWork: function() {
-        this.onPause = true;
-        document.getElementById("timer").style.borderColor = "#868686";
-        document.getElementById("timer").style.color = "#868686";
-        document.getElementById("msg").innerHTML = "Sessione in pausa";
-        this.resetVariables(this.minutes, this.seconds, false);
-      },
-    startBreak : function(){
-      document.getElementById("msg").innerHTML = "Rilassati, sei in pausa! 😁";
-      document.getElementById("break").style.display = "none";
-      document.getElementById("pause").style.display = "none";
-      document.getElementById("work").style.display = "none";
-      this.onPause = true;
-      this.resetVariables(10, 0, true);
-    },
-    stopTimer : function(){
-        document.getElementById("pause").style.display = "none";
-        document.getElementById("work").style.display = "inline";   
-        document.getElementById("break").style.display = "inline";   
-        document.getElementById("timer").style.borderColor = "#ffffff";
-        document.getElementById("timer").style.color = "#ffffff";
-        document.getElementById("msg").innerHTML = "Buono studio!";
-        this.resetVariables(50, 0, false);
-        this.onPause = false;
-        this.updateDom();
-    },
-    pauseTimer : function(){
-        this.resetVariables(this.minutes, this.seconds, false);
-        this.updateDom();
-      },
-    toDoubleDigit : function(num){
-      if(num < 10) {
-        return "0" + parseInt(num, 10);
-      }
-      return num;
-    },
-    updateDom : function(){
-      this.minutesDom.innerHTML = this.toDoubleDigit(this.minutes);
-      this.secondsDom.innerHTML = this.toDoubleDigit(this.seconds);
-    },
-    intervalCallback : function(){
-      if(!this.started) return false;
-      if(this.seconds == 0) {
-        if(this.minutes == 0) {
-          this.timerComplete();
-          return;
-        }
-        this.seconds = 59;
-        this.minutes--;
-      } else {
-        this.seconds--;
-      }
-      this.updateDom();
-    },
-    timerComplete : function(){
-        if(this.onPause == true) {
-          document.getElementById("msg").innerHTML = "Pausa terminata!";
-          this.onPause = false;
-        } else {
-          document.getElementById("msg").innerHTML = "Sessione terminata!";
-        }
-        var audio = new Audio('alert.mp3');
-        audio.play();
-        this.started = false;
-        document.getElementById("pause").style.display = "none";
-        document.getElementById("work").style.display = "inline";   
+    // Esegui una validazione semplice dei campi
+    if (name === "" || email === "" || message === "") {
+      alert("Per favore, completa tutti i campi del modulo.");
+      return;
     }
-};
-window.onload = function(){
-  pomodoro.init();
-};
+
+    // Simula l'invio del modulo (puoi implementare la logica del backend qui)
+    setTimeout(function() {
+      alert("Il modulo è stato inviato con successo! Grazie, " + name + ", per il tuo messaggio.");
+      contactForm.reset(); // Resettare il modulo dopo l'invio
+    }, 1000);
+  });
+
+  // Aggiorna il nome e l'occupazione nella sezione "Home" utilizzando il JavaScript
+  var nameElement = document.getElementById("name");
+  var occupationElement = document.getElementById("occupation");
+
+  nameElement.textContent = "Nome Cognome";
+  occupationElement.textContent = "Sviluppatore Web";
+});
