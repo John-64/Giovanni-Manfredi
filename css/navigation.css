@@ -43,7 +43,7 @@
 
 .primary-navigation .navigation-list a {
     text-decoration: none;
-    color: #bd34fe;
+    color: var(--clr-primary-300);
     font-weight: 600;
 }
 
@@ -64,11 +64,18 @@
 }
 
 .primary-button > button {
-    background-color: #f2921d;
-    color: #ffffff;
+    background-color: var(--clr-primary-500);
+    color: var(--clr-primary-900);
     border: none;
     padding: 0.3rem 0.6rem;
     border-radius: 1rem;
+}
+
+.primary-button > button:hover {
+    cursor: pointer;
+    background-color: var(--clr-primary-400);
+    color: var(--clr-primary-100);
+    box-shadow: 0px 0px 5px 1px #e9c121;
 }
 
 /*Media querues*/

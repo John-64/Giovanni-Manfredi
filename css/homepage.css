@@ -1,6 +1,6 @@
 .info-box {
     /*border: 10px solid red;*/
-    min-height: 20rem;
+    min-height: 45rem;
 }
 
 .info-box .container {
@@ -16,8 +16,8 @@
 
 .text-info {
     border-radius: 15rem;
-    background-color: #50bfff;
-    border: 2px solid #000000;
+    background-color: var(--clr-primary-700);
+    border: 2px solid var(--clr-primary-100);
     font-size: var(--fs-600);
     padding: 1rem;
     display: flex;
@@ -26,7 +26,7 @@
     grid-area: text;
     min-height: 15rem;
     text-align: center;
-    color: #000000;
+    color: var(--clr-primary-100);
     font-weight: 400;
 }
 
@@ -43,7 +43,8 @@
 .circle-photo {
     width: 20rem;
     height: 20rem;
-    background-color: #ffd42c;
+    background-color: var(--clr-primary-400);
+    border: 5px solid var(--clr-primary-400);
     position: absolute;
     border-radius: 50%;
 }
@@ -51,17 +52,10 @@
 .cilindre-photo {
     width: 40rem;
     height: 20rem;
-    background-color: #ffd42c;
+    background-color: var(--clr-primary-400);
     position: absolute;
     transform: rotate(-30deg);
     top: 162px;
     left: -441px;
     z-index: -1;
-}
-
-.circle-photo{
-    width: 20rem;
-    height: 20rem;
-    border-radius: 50%;
-    border: 3.5px solid #ffd42c;
 }
