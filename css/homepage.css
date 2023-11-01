@@ -1,3 +1,7 @@
+body {
+  background-color: var(--clr-dark-primary-800);
+}
+
 .info-box {
     /*border: 10px solid red;*/
     min-height: 45rem;

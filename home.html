@@ -1,35 +1,23 @@
 <!doctype html>
-<html lang="it">
+<html lang="it-IT">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="images/GM.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/navigation.css">
     <link rel="stylesheet" href="css/homepage.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+      $(function(){
+        $('#header').load('html/header.html');
+      })
+    </script>
     <title>Giovanni Manfredi</title>
   </head>
   <body>
-    <header class="primary-header">
-      <div class="container">
-        <div class="logo">
-          <a href="index.html"><img src="images/Logo-GM.svg" alt="Giovanni Manfredi"></a>
-        </div>
-        <nav class="primary-navigation">
-          <span class="material-symbols-outlined menu">menu</span>
-          <ul class="navigation-list">
-            <li><a href="#">Chi sono</a></li>
-            <li><a href="#">Progetti</a></li>
-            <li><a href="#">Contatti</a></li>
-          </ul>
-        </nav>
-        <div class="primary-button">
-          <button class="button">Scrivimi</button>
-        </div>
-      </div>
-    </header>
+    <div id="header"></div>
     <main>
       <div class="info-box">
         <div class="container">
@@ -42,7 +30,7 @@
             </div>
           </div>
           <div class="text-info">
-            <p>Ciao! <br> Benvenuti nel mio sito web, qui troverai informazioni su di me, quali: interessi, contatti e progetti. Se desideri contattarmi clicca il pulsante "Scrivimi".</p>
+            <p>Ciao! <br> Benvenuto nel mio sito web, qui troverai molte informazioni su di me. Se desideri contattarmi clicca il pulsante "Scrivimi".</p>
           </div>
         </div>
       </div>
