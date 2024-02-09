@@ -55,7 +55,12 @@ body {
     grid-area: logo;
     width: 100%;
     height: 100%;
-    background-color: #e9c121;
+    color: #e9c121;
+    font-size: 1.5rem;
+    font-weight: var(--fw-bold);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Utilities */

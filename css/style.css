@@ -110,3 +110,12 @@ svg {
 .text-primary-400 {
   color: var(--clr-primary-500);
 }
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
